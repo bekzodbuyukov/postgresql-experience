@@ -10,6 +10,8 @@ General pattern (algorithm)
 ## Setting venv (Pipenv), Django project and Docker
 Follow [these](https://github.com/bekzodbuyukov/docker-experience) steps.
 
+**Note**: docker-compose.yml file a little bit different
+
 ## Installing database adapter, psycopg2
 
 ## Updating the DATABASE config in settings.py file
