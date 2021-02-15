@@ -44,5 +44,19 @@ Some additional info:
 > More info about Pipfile.lock conflicts in the book **Django for Professionals**, Chapter: 3, page: 42 by _William S. Vincent_.
 
 ## Updating the DATABASE config in settings.py file
+Set **DATABASE** settings in **settings.py** to content below:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
+    }
+}
+```
 
 ## Installing and running PostgreSQL locally
