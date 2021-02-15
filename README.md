@@ -37,10 +37,9 @@ To install pycopg2 within Docker:
 ```bash
 docker-compose exec [service-name] pipenv install psycopg2-binary 
 ```
-
-**psycopg2-binary** is a stand-alone version of [psycopg2](https://pypi.org/project/psycopg2/), which doesn't require a compiler or external libraries.
-
-Installing new software package within Docker and then rebuilding the image from scratch will help us to avoid **Pipfile.lock** conflicts.
+Some additional info:
+1. **psycopg2-binary** is a stand-alone version of [psycopg2](https://pypi.org/project/psycopg2/), which doesn't require a compiler or external libraries.
+2. Installing new software package within Docker and then rebuilding the image from scratch will help us to avoid **Pipfile.lock** conflicts.
 
 > More info about Pipfile.lock conflicts in the book **Django for Professionals**, Chapter: 3, page: 42 by _William S. Vincent_.
 
