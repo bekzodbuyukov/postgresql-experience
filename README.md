@@ -31,6 +31,8 @@ services:
 
 We have added new service named **db**, also added this service on depending of **web** service. As a result service **db** runs before **web**.
 
+More info about PostgreSQL in Docker is [here](https://hub.docker.com/_/postgres).
+
 ## Installing database adapter, psycopg2
 To install pycopg2 within Docker:
 
