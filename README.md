@@ -69,10 +69,10 @@ DATABASES = {
 ```
 
 ## Installing and running PostgreSQL locally
-To run Docker with our new services (we are forcing image build):
+To run Docker with our new services in detached mode (we are forcing image build):
 
 ```bash
-$ docker-compose up --build
+$ docker-compose up -d --build
 ```
 
 Don't forget to apply migrations, because now we are using new database:
