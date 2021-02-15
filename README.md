@@ -37,6 +37,8 @@ We have added new service named **db**, also added this service on depending of 
 
 More info about PostgreSQL in Docker is [here](https://hub.docker.com/_/postgres).
 
+**Warning**: It is very bad practise to share with public **docker-compose.yml** file of production-ready or any other project. In this repo it's done for example.
+
 ## Installing database adapter, psycopg2
 To install pycopg2 within Docker:
 
