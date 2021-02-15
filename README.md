@@ -37,14 +37,15 @@ We have added new service named **db**, also added this service on depending of 
 
 More info about PostgreSQL in Docker is [here](https://hub.docker.com/_/postgres).
 
-**Warning**: It is very bad practise to share with public **docker-compose.yml** file of production-ready or any other project. In this repo it's done for example.
+**Warning**: It is very bad practise to share with public **docker-compose.yml** file of production-ready or any other project. In this repo it's done just for example.
 
 ## Installing database adapter, psycopg2
-To install pycopg2 within Docker:
+To install pycopg2 within Docker (for this you must run Docker in detached mode):
 
 ```bash
-docker-compose exec [service-name] pipenv install psycopg2-binary 
+$ docker-compose exec [service-name] pipenv install psycopg2-binary 
 ```
+
 Some additional info:
 1. **psycopg2-binary** is a stand-alone version of [psycopg2](https://pypi.org/project/psycopg2/), which doesn't require a compiler or external libraries.
 2. Installing new software package within Docker and then rebuilding the image from scratch will help us to avoid **Pipfile.lock** conflicts.
@@ -68,3 +69,22 @@ DATABASES = {
 ```
 
 ## Installing and running PostgreSQL locally
+To run Docker with our new services (we are forcing image build):
+
+```bash
+$ docker-compose up --build
+```
+
+Don't forget to apply migrations, because now we are using new database:
+
+```bash
+$ docker-compose exec [service-name] python manage.py migrate
+```
+
+and create super user:
+
+```bash
+$ docker-compose exec [service-name] python manage.py createsuperuser
+```
+
+> Using book **Django for Professionals** by _William S. Vincent_
