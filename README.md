@@ -78,13 +78,13 @@ $ docker-compose up -d --build
 Don't forget to apply migrations, because now we are using new database:
 
 ```bash
-$ docker-compose exec [service-name] python manage.py migrate
+$ docker-compose exec [service-name] python django_project/manage.py migrate
 ```
 
 and create super user:
 
 ```bash
-$ docker-compose exec [service-name] python manage.py createsuperuser
+$ docker-compose exec [service-name] python django_project/manage.py createsuperuser
 ```
 
 > Using book **Django for Professionals** by _William S. Vincent_
