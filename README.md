@@ -27,6 +27,10 @@ services:
       - db
   db:
     image: postgres:13.2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
 ```
 
 We have added new service named **db**, also added this service on depending of **web** service. As a result service **db** runs before **web**.
