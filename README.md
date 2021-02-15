@@ -12,6 +12,25 @@ Follow [these](https://github.com/bekzodbuyukov/docker-experience) steps.
 
 **Note**: **docker-compose.yml** file a little bit different
 
+```yaml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python django_project/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/django_project
+    ports: 
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: postgres:13.2
+```
+
+docker-compose.yml
+
 ## Installing database adapter, psycopg2
 To install pycopg2 within Docker:
 
@@ -21,7 +40,7 @@ docker-compose exec [service-name] pipenv install psycopg2-binary
 
 Installing new software package within Docker and then rebuilding the image from scratch will help us to avoid **Pipfile.lock** conflicts.
 
-> More info about Pipfile.lock conflicts in the book **Django for professionals**, Chapter: 3, page: 42 by _William S. Vincent_.
+> More info about Pipfile.lock conflicts in the book **Django for Professionals**, Chapter: 3, page: 42 by _William S. Vincent_.
 
 ## Updating the DATABASE config in settings.py file
 
